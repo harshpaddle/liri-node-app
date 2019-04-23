@@ -94,6 +94,34 @@ function omdb(movieName) {
 }
 
 
+function random() {
+  fs.readFile("random.txt", "utf8", function (err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    // console.log(data);
+
+    var dataArr = data.split(",");
+    // console.log(dataArr)
+    var command = dataArr[0];
+    var parameter = dataArr[1];
+
+
+    switch (command) {
+      case "concert-this":
+        bands(parameter);
+        break;
+      case "spotify-this-song":
+        spotifyIt(parameter)
+        break;
+      case "movie-this":
+        omdb(parameter);
+        break;
+    };
+  })
+}
+
+
 
 
 
