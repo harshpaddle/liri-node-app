@@ -10,7 +10,7 @@ const keys = require("./keys.js");
 
 const command = process.argv[2];
 
-var parameter = process.argv.slice(3);
+var parameter = process.argv.slice(3).join("+");
 
 var spotify = new Spotify(keys.spotify);
 
